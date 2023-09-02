@@ -14,6 +14,14 @@ const express = require('express');
 const hbs = require('hbs');
 
 const app = express();
+//     |
+//     |-----------------------------|
+// use session here:                 V
+require('./config/session.config')(app);
+//                                  ^
+//                                  |
+// the "app" that gets passed here is the
+// previously defined Express app (const app = express();)
 
 // ℹ️ This function is getting exported from the config folder. It runs most middlewares
 require('./config')(app);
@@ -27,6 +35,9 @@ app.locals.title = `${capitalized(projectName)}- Generated with Ironlauncher`;
 // 👇 Start handling routes here
 const index = require('./routes/index');
 app.use('/', index);
+
+const authRouter = require('./routes/auth.routes');
+app.use('/', authRouter);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require('./error-handling')(app);

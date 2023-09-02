@@ -1,0 +1,36 @@
+<div class="page-wrapper">
+
+
+  <h1 class="header-title"> Signup </h1>
+
+  <form action="/signup" method="POST">
+
+    <label> Username
+      <input type="text" name="username" placeholder="ironhacker" />
+    </label>
+
+    <label> Email
+      <input type="email" name="email" placeholder="rockstar@ironhack.com" />
+    </label>
+
+    <label> Password
+      <input type="password" name="password" placeholder="********" />
+    </label>
+
+    <button type="submit" class="buttons" id="form-button"> Create account </button>
+
+
+  {{#if errorMessage}}
+    <p class="error"> {{errorMessage}} </p>
+  {{/if}}
+
+  </form>
+
+
+  <div class="footer-buttons">
+  <a href="/" class="buttons"> Ugh take me back home </a>
+  <a href="/login" class="buttons"> Already have an account? Log in </a>
+  </div>
+
+
+</div>

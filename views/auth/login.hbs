@@ -1,0 +1,30 @@
+<div class="page-wrapper">
+
+<h1 class="header-title"> Log in </h1>
+
+  <form action="/login" method="post">
+    <label> Username
+       <input type="username" name="username" placeholder="Your username here"/>
+    </label>
+
+    <label> Email
+      <input type="email" name="email" placeholder="rockstar@ironhack.com" />
+    </label>
+
+    <label> Password
+      <input type="password" name="password" placeholder="Your password here"/>
+    </label>
+
+    <button type="submit" class="buttons" id="form-button"> Log in </button>
+
+  {{#if errorMessage }}
+    <p class="error"> {{errorMessage}} </p>
+  {{/if}}
+
+  </form>
+
+<div class="footer-buttons">
+  <a href="/" class="buttons"> Back home </a>
+</div>
+
+</div>

@@ -1,0 +1,16 @@
+<div class="page-wrapper">
+
+  <h1 class="header-title"> My profile </h1>
+
+  {{#if userInSession}}
+  <h2> Welcome {{userInSession.username}} !</h2>
+  <img src="https://media.giphy.com/media/LFay0DyV6urKw/giphy.gif" alt="funny-gif">
+  {{else}}
+    <p> Still not logged in, sorry. Please go back to the home page.</p>
+  {{/if}}
+
+  <div class="footer-buttons">
+    <a href="/" class="buttons"> Back home </a>
+  </div>
+
+</div>
